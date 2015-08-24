@@ -1,3 +1,4 @@
+//乘法口诀表
 package main
 
 import "fmt"
