@@ -17,6 +17,8 @@ var(
 	f = "dell"
 )
 
+var a1,a2 = "hr",6
+
 type(
 	newType int
 	type1 float64
@@ -24,7 +26,10 @@ type(
 )
 
 func main() {
+	a3,a4 := "3","*"
 	fmt.Println("Hello World!")
 	fmt.Println(x)
 	fmt.Println(f)
+	fmt.Println(a3)
+	fmt.Println(a4)
 }
