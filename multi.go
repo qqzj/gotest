@@ -15,7 +15,7 @@ func main(){
 	func(){		// 开始信息
 		fmt.Println("***************************")
 		fmt.Println("*                         *")
-		fmt.Println("* Goroutine start ! *")
+		fmt.Println("*       多线程启动        *")
 		fmt.Println("*                         *")
 		fmt.Println("***************************")
 	}()
@@ -23,7 +23,7 @@ func main(){
 	func(){		// 结束信息
 		fmt.Println("***************************")
 		fmt.Println("*                         *")
-		fmt.Println("* All goroutine is done ! *")
+		fmt.Println("*       所有线程结束      *")
 		fmt.Println("*                         *")
 		fmt.Print("***************************")
 	}()
