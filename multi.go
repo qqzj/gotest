@@ -2,6 +2,7 @@ package main
 import (
 	"fmt"
 	"runtime"
+	"time"
 )
 var (
 	wait int	//记录已经返回的goroutine的数量
@@ -48,6 +49,14 @@ func main(){
 func doSomeThing(id int){
 	for a:=0;a<10;a++{
 		fmt.Printf("[%d]",id)
+		/**
+		  *人为阻塞1秒,
+		  *没有goroutine则至少需要128秒
+		  *使用goroutine则大约所有任务在1秒后完成
+		  */
+		if a==5{
+			time.Sleep(time.Second)
+		}
 	}
 	fmt.Println()
 	ch<-id
