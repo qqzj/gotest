@@ -17,7 +17,7 @@ func main() {
 	fmt.Println(sl_0[1:])
 	fmt.Println(sl_0[:])
 
-fmt.Println()
+	fmt.Println()
 	fmt.Println(sl_0)
 	fmt.Println(sl_1)
 	fmt.Println()	
@@ -26,6 +26,9 @@ fmt.Println()
 //	sl_1 = append()
 	fmt.Println(s0)
 
+	fmt.Println()
+	s2 := make([]int,10,20)
+	fmt.Println(s2)
 
 	fmt.Println("Hello World!")
 }
