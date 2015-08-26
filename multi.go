@@ -28,14 +28,16 @@ func main(){
 		fmt.Print("***************************")
 	}()
 	//goroutine开始
-	for a:=1;a<=woker;a++{
+	for a:=0;a<woker;a++{
 		go doSomeThing(a)
 	}
 	//等待所有goroutine结束,才结束main主函数,整个程序才结束.收放自如嘛^.^
 	lis:for{
 			select{
-				case <-ch:
+				case c:=<-ch:
 					wait++
+					fmt.Printf("并发线程[%d]完成!\n",c)
+					fmt.Println("----------")
 					if wait==woker{
 						break lis
 					}
@@ -48,6 +50,5 @@ func doSomeThing(id int){
 		fmt.Print(id)
 	}
 	fmt.Println()
-	fmt.Println("----------")
 	ch<-id
 }
