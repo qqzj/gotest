@@ -50,11 +50,11 @@ func doSomeThing(id int){
 	for a:=0;a<10;a++{
 		fmt.Printf("[%d]",id)
 		/**
-		  *人为阻塞1秒,
-		  *没有goroutine则至少需要128秒
-		  *使用goroutine则大约所有任务在1秒后完成
+		  *人为阻塞2秒,
+		  *没有goroutine则至少需要128*2秒
+		  *使用goroutine则大约所有任务在1*2秒后完成
 		  */
-		if a==5{
+		if a==4 || a==9{
 			time.Sleep(time.Second)
 		}
 	}
