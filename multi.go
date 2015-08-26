@@ -8,7 +8,7 @@ var (
 	ch = make(chan int)	//goroutine通信管道
 )
 const (
-	woker = 5	//全局goroutine数量
+	woker = 64	//全局goroutine数量
 )
 func main(){
 	runtime.GOMAXPROCS(runtime.NumCPU())	//使用系统最大CPU数,以实现多线程(依赖Go的线程调度,不是100%)
@@ -47,7 +47,7 @@ func main(){
 //goroutine任务
 func doSomeThing(id int){
 	for a:=0;a<10;a++{
-		fmt.Print(id)
+		fmt.Printf("[%d]",id)
 	}
 	fmt.Println()
 	ch<-id
