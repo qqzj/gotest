@@ -11,8 +11,6 @@ func calc() {
 		for b := 1; b < (a + 1); b++ {
 			fmt.Printf("%d*%d=%d\t", a, b, a*b)
 		}
-		if a != 9 {
-			fmt.Println()
-		}
+		fmt.Println()
 	}
 }
