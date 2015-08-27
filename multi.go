@@ -6,7 +6,7 @@ import (
 )
 var (
 	wait int	//记录已经返回的goroutine的数量
-	ch = make(chan int)	//goroutine通信管道
+	ch = make(chan int, woker)	//goroutine通信管道
 )
 const (
 	woker = 64	//全局goroutine数量
