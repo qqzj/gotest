@@ -10,7 +10,7 @@ func main() {
 	fmt.Println(a)
 	fmt.Println(b)
 	demo2(1, 2, 3)
-fmt.Println(demo3())
+	fmt.Println(demo3())
 	val := demo4()
 	fmt.Println(val)
 	demo6(demo5)
@@ -28,16 +28,17 @@ func demo() (k string, v int) {
 func demo2(arg ...int) {
 	fmt.Println(arg)
 }
-func demo3()int{
+func demo3() int {
 	return 10
 }
-func demo4()int{
+func demo4() int {
 	return 100
 }
+
 //函数回调
-func demo5(in int){
-	fmt.Println(in*in)
+func demo5(in int) {
+	fmt.Println(in * in)
 }
-func demo6(myfunc func(int)){
+func demo6(myfunc func(int)) {
 	myfunc(6)
 }

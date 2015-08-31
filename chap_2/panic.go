@@ -15,6 +15,7 @@ func main() {
 		}
 	}()
 	runSome(false)
+	fmt.Println("幸福快乐的生活在一起...")
 	fmt.Println()
 	fmt.Println("第二天")
 	fmt.Println()
