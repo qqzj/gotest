@@ -10,10 +10,10 @@ func main() {
 	var letter chan bool
 	var number chan bool
 	wg = &sync.WaitGroup{}
-	wg.Add(1)
+	wg.Add(2)
 	letter, number = make(chan bool), make(chan bool)
 
-	go func() {
+	go func(wg *sync.WaitGroup) {
 		var i int
 		i = 1
 		for {
@@ -32,8 +32,9 @@ func main() {
 		}
 	endNumber:
 		fmt.Printf("%s", "{数字输出完毕, goroutine退出} ")
+		wg.Done()
 		return
-	}()
+	}(wg)
 
 	go func(wg *sync.WaitGroup) {
 		var str string
