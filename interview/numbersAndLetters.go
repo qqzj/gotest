@@ -31,7 +31,7 @@ func main() {
 			}
 		}
 	endNumber:
-		fmt.Printf("%s", "{数字输出完毕, goroutine退出} ")
+		fmt.Printf("%s\n", "{数字输出完毕, goroutine退出} ")
 		wg.Done()
 		return
 	}(wg)
