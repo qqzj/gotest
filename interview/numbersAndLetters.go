@@ -20,11 +20,11 @@ func main() {
 			select {
 			case <-number:
 				fmt.Printf("[%d,%d] ", i, i+1)
-				i = i + 2
 				letter <- true
-				if i > 24 {
+				if i == 25 {
 					goto endNumber
 				}
+				i = i + 2
 				break
 			default:
 				break
@@ -46,13 +46,14 @@ func main() {
 		for {
 			select {
 			case <-letter:
-				if i < count-2 {
+				if i <= count-2 {
 					fmt.Printf("[%s,%s] ", str[i:i+1], str[i+1:i+2])
-					i = i + 2
-					if i > 23 {
+					if i == 24 {
 						goto endLetter
+					}else{
+						number <- true
 					}
-					number <- true
+					i = i + 2
 				}
 				break
 
@@ -65,6 +66,7 @@ func main() {
 		wg.Done()
 		return
 	}(wg)
+
 	number <- true
 	wg.Wait()
 }
